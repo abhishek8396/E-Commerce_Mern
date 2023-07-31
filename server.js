@@ -28,8 +28,7 @@ app.use('/api/v1/category', categoryRoute);
 app.use('/api/v1/product', productRoute);
 
 // Static files (e.g., React app) should be served using the absolute path, not __dirname
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.resolve();
 
 app.use(express.static(path.join(__dirname, './ecommerce/build')));
 
